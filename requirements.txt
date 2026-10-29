@@ -1,0 +1,6 @@
+numpy
+pandas
+scikit-learn
+twilio
+RPi.GPIO ; platform_machine == "armv7l" or platform_machine == "aarch64"
+pytest

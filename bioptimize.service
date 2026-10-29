@@ -1,0 +1,17 @@
+# sudo cp bioptimize.service /etc/systemd/system/
+# sudo systemctl enable --now bioptimize
+# logs: journalctl -u bioptimize -f
+[Unit]
+Description=Bioptimize biogas monitoring
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/Bioptimize
+ExecStart=/usr/bin/python3 /home/pi/Bioptimize/bioptimize1.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
